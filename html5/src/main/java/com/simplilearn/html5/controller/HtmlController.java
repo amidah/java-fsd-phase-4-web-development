@@ -10,5 +10,10 @@ public class HtmlController {
 	public String semancticView() {
 		return "semantic";
 	}
+	
+	@GetMapping("/audiovideo")
+	public String audioVideoView() {
+		return "audiovideo";
+	}
 
 }
