@@ -35,4 +35,20 @@ public class HtmlController {
 	public String bootstrapformView() {
 		return "bootstrapform";
 	}
+	
+	@GetMapping("/bootstrapformvalidation")
+	public String bootstrapvalidationformView() {
+		return "bootstrapformvalidation";
+	}
+	
+	@GetMapping("/bootstrapregistrationform")
+	public String bootstrapregistrationformView() {
+		return "bootstrapregistrationform";
+	}
+	
+	@GetMapping("/bootstrapprogressbar")
+	public String bootstrapprogressbarView() {
+		return "bootstrapprogressbar";
+	}
+
 }
