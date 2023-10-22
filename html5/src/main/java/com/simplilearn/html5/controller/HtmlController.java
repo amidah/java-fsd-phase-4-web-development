@@ -15,5 +15,24 @@ public class HtmlController {
 	public String audioVideoView() {
 		return "audiovideo";
 	}
+	
+	@GetMapping("/bootstrap")
+	public String bootstrapView() {
+		return "bootstrap";
+	}
+	
+	@GetMapping("/bootstrap_container_responsive")
+	public String bootstrapContainerResponsiveView() {
+		return "bootstrap_container_responsive";
+	}
 
+	@GetMapping("/responsivegrid")
+	public String responsivegridView() {
+		return "responsivegrid";
+	}
+	
+	@GetMapping("/bootstrapform")
+	public String bootstrapformView() {
+		return "bootstrapform";
+	}
 }
