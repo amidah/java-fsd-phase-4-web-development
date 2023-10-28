@@ -61,4 +61,19 @@ public class HtmlController {
 		return "bootstrapalert";
 	}
 
+	@GetMapping("/bootstraprange")
+	public String bootstraprangeView() {
+		return "bootstraprange";
+	}
+	
+	@GetMapping("/bootstrapspinner")
+	public String bootstrapspinnerView() {
+		return "bootstrapspinner";
+	}
+	
+	
+	@GetMapping("/bootstrappagination")
+	public String bootstrappaginationView() {
+		return "bootstrappagination";
+	}
 }
