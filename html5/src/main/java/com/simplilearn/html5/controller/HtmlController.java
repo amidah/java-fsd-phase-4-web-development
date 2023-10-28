@@ -50,5 +50,15 @@ public class HtmlController {
 	public String bootstrapprogressbarView() {
 		return "bootstrapprogressbar";
 	}
+	
+	@GetMapping("/bootstrapjumbotron")
+	public String bootstrapjumbotronView() {
+		return "bootstrapjumbotron";
+	}
+	
+	@GetMapping("/bootstrapalert")
+	public String bootstrapalertView() {
+		return "bootstrapalert";
+	}
 
 }
