@@ -10,4 +10,9 @@ public class HtmlJavascriptController {
 	public String javascriptdomView() {
 		return "javascriptdom";
 	}
+	
+	@GetMapping("/javascriptevent")
+	public String javascripteventView() {
+		return "javascriptevent";
+	}
 }
