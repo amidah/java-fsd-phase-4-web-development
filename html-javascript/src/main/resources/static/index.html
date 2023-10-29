@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript BOM(Browser Object Model)</title>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">  
+<link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel = "stylesheet">  
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	function alertAction(){
+		console.log("I am reachable...")
+		alert("Hello window object...")
+	}
+	function confirmAction(){
+		var v = confirm("Do you really want to perform this action?");
+		if(v==true){
+			alert("OK");
+		}
+		else{
+			alert("CANCEL");
+		}
+	}
+	function promptAction(){
+		var v = prompt("Who are you?");
+		alert("I am " + v);
+	}
+	function openAction(){
+		open("https://start.spring.io/");
+	}
+	function setTimeoutAction(){
+		setTimeout(
+			function(){
+				alert("Welcome to index page after 2 seconds...")
+			},2000		
+		);
+	}
+	function lengthAction(){
+		alert("Length of visited URLs- " + history.length);
+	}
+	function forwardAction(){
+		history.forward();
+	}
+	function backwardAction(){
+		history.back();
+	}
+	function goAction(){
+		history.go(-2);
+	}
+	function navigatorAction(){
+		alert(navigator.appCodeName + "\n" + navigator.appName + "\n" + navigator.appVersion
+		+ "\n" + navigator.cookieEnabled + "\n" + navigator.language + "\n" + navigator.userAgent 
+		+ "\n" + navigator.platform + "\n" + navigator.onLine);
+	}
+	function screenAction(){
+		alert(screen.width + "\n" + screen.height + "\n" + screen.availWidth 
+				+ "\n" + screen.availHeight + "\n" + screen.colorDepth + "\n" + 
+				screen.pixelDepth);
+	}
+</script>
+</head>
+<body>
+	<h2>BOM - Browser Objects</h2>
+	<ul>
+		<li>Window</li>
+		<li>History</li>
+		<li>Navigator</li>
+		<li>Screen</li>
+	</ul>
+	<h3>Window Object Functions</h3>
+	<input type="button" value="Alert" onclick="alertAction()">
+	<input type="button" value="Confirm" onclick="confirmAction()">
+	<input type="button" value="Prompt" onclick="promptAction()">
+	<input type="button" value="Open" onclick="openAction()">
+	<input type="button" value="SetTimeout" onclick="setTimeoutAction()">
+	<br/>
+	<h3>History Object Functions</h3>
+	<input type="button" value="Length" onclick="lengthAction()">
+	<input type="button" value="Forward" onclick="forwardAction()">
+	<input type="button" value="Backward" onclick="backwardAction()">
+	<input type="button" value="Go" onclick="goAction()">
+	<br/>
+	<h3>Navigator Object Details</h3>
+	<input type="button" value="NavigatorDetails" onclick="navigatorAction()">
+	<br/>
+	<h3>Screen Object Details</h3>
+	<input type="button" value="ScreenDetails" onclick="screenAction()">
+	
+</body>
+</html>
