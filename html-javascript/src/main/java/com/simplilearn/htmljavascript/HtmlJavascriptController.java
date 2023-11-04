@@ -25,4 +25,9 @@ public class HtmlJavascriptController {
 	public String javascriptclassView() {
 		return "javascriptclass";
 	}
+	
+	@GetMapping("/javascriptobject")
+	public String javascriptobjectView() {
+		return "javascriptobject";
+	}
 }
