@@ -20,4 +20,9 @@ public class HtmlJavascriptController {
 	public String javascriptvalidationView() {
 		return "javascriptvalidation";
 	}
+	
+	@GetMapping("/javascriptclass")
+	public String javascriptclassView() {
+		return "javascriptclass";
+	}
 }
