@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Validation - Client Side</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	function validateform() {
+		var name = document.validationform.username.value;
+		var password = document.validationform.password.value;
+		var reenteredpassword = document.validationform.password1.value;
+		var phonenumber = document.validationform.phonenumber.value;
+		
+		// email id must contain the @ and . character
+		// There must be at least one character before and after the @.
+		// There must be at least two characters after . (dot).
+		
+		var email = document.validationform.email.value;
+		var atposition = email.indexOf("@");
+		var dotposition = email.lastIndexOf(".");
+
+		if (name == null || name == "") {
+			document.getElementById("usernameerrormsg").innerHTML="Username can't be blank";
+			return false;
+		} else if (password.length<8 || password.length>20) {
+			alert("Password must be 8-20 characters long.")
+			return false;
+		} else if (reenteredpassword.length<8 || reenteredpassword.length>20) {
+			alert("Re-entered Password must be 8-20 characters long.")
+			return false;
+		} else if (password != reenteredpassword) {
+			alert("Password and Re-entered Password mismatch.")
+			return false;
+		} else if (isNaN(phonenumber)) {
+			alert("Please check your phonenumber, it might contains non numeric values also.")
+			return false;
+		}
+		else if(atposition < 1 || dotposition < atposition+2 || dotposition+2 >= email.length){
+			alert("Please enter a valid email address \n atposition:" + atposition + "\n dotposition:" + dotposition);
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="container mt-3">
+		<form name="validationform" method="post" action="xyz.jsp"
+			onsubmit="return validateform()">
+			<div class="mb-3">
+				<label for="username" class="form-label">Username</label> 
+				<input type="text" class="form-control" id="username" name="username">
+				<span id="usernameerrormsg"></span>
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">Password</label> <input
+					type="password" class="form-control" id="password" name="password"
+					aria-describedby="passwordHelpBlock">
+				<div id="passwordHelpBlock" class="form-text">Your password
+					must be 8-20 characters long.</div>
+			</div>
+			<div class="mb-3">
+				<label for="password1" class="form-label">Re-enter Password</label>
+				<input type="password" class="form-control" id="password1"
+					name="password1" aria-describedby="passwordHelpBlock">
+				<div id="passwordHelpBlock" class="form-text">Your password
+					must be 8-20 characters long.</div>
+			</div>
+			<div class="mb-3">
+				<label for="phonenumber" class="form-label">PhoneNumber</label> <input
+					type="text" class="form-control" id="phonenumber"
+					name="phonenumber">
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Email
+					address</label> <input type="email" class="form-control"
+					id="email" name = "email" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text">We'll never share your
+					email with anyone else.</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

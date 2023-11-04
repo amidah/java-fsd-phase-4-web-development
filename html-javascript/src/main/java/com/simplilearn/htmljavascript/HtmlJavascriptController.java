@@ -15,4 +15,9 @@ public class HtmlJavascriptController {
 	public String javascripteventView() {
 		return "javascriptevent";
 	}
+	
+	@GetMapping("/javascriptvalidation")
+	public String javascriptvalidationView() {
+		return "javascriptvalidation";
+	}
 }
