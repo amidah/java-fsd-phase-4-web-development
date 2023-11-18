@@ -1,0 +1,86 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+<head>  
+<title> {{title}} </title>  
+<meta charset = "utf-8">  
+<meta name = "viewport" content = "width=device-width, initial-scale=1">   
+</head>  
+<body>
+	<div class="container mt-2" style="border:2px solid black;">
+		<h5>{{title}} is running...</h5>
+		<form action="" class="was-validated">
+			<div class="userid">
+				<label for="uid" class="form-label">User Name:</label>
+				<input type="text" class="form-control" id="uid" placeholder="Enter User Name" name="uid" required>
+				<div class="valid-feedback">Valid data.</div>
+				<div class="invalid-feedback">Please fill the user name.</div>
+			</div>
+			<div class="emailid">
+				<label for="emid" class="form-label">Email ID:</label>
+				<input type="email" class="form-control" id="emid" placeholder="Enter Email Id" name="emid" required>
+				<div class="valid-feedback">Valid data.</div>
+				<div class="invalid-feedback">Please fill the email id.</div>
+			</div>
+			<div class="numberid">
+				<label for="numid" class="form-label">Mobile Number:</label>
+				<input type="number" class="form-control" id="numid" placeholder="Enter Mobile Number" name="numid" required>
+				<div class="valid-feedback">Valid data.</div>
+				<div class="invalid-feedback">Please fill the mobile number.</div>
+			</div>
+			<div class="txt">
+				<label for="txt" class="form-label">Message:</label>
+				<textarea class="form-control" id="txt" placeholder="Enter Message" name="txt" required></textarea>
+				<div class="valid-feedback">Valid data.</div>
+				<div class="invalid-feedback">Please fill the message.</div>
+			</div>
+			<div class="form-check" *ngIf="1==1; else otherBlock">
+				<input class="form-check-input" type="checkbox" id="Checked" name="remembers" required>
+				<label class="form-check-label" for="Checked">I agree on form validation.</label>
+				<div class="valid-feedback"></div>
+				<div class="invalid-feedback"></div>
+			</div>
+			<ng-template #otherBlock>
+				Unfortunately, we are not unable to show checkbox!
+			</ng-template>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					{{mvTitle}}
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Movie Title</th>
+									<th>Director</th>
+									<th>Cast</th>
+									<th>Release Date</th>
+								</tr>	
+							</thead>
+							<tbody>
+								<tr *ngFor="let movie of movies">
+									<td>{{movie.movieTitle}}</td>
+									<td>{{movie.director}}</td>
+									<td>{{movie.cast}}</td>
+									<td>{{movie.releaseDate}}</td>
+								</tr>
+							</tbody>		
+						</table>
+					</div>
+				</div>
+			</div>
+			<select [(ngModel)]="selectedValue">  
+				<option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+			</select>  
+			<div class='row' [ngSwitch]="selectedValue">  
+				<div *ngSwitchCase="'One'">One is Selected !!!</div>
+				<div *ngSwitchCase="'Two'">Two is Selected !!!</div>
+				<div *ngSwitchCase="'Three'">Three is Selected !!!</div>
+				<div *ngSwitchDefault>No Item is Selected !!! Kindly select and see the behavior !!!</div>
+			</div>
+			<br>
+			<button type="submit" class="btn btn-info mt-2">Submit</button>
+		</form>
+	</div>
+</body>
+</html>
