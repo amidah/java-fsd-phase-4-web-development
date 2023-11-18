@@ -11,10 +11,11 @@
 		<form action="" class="was-validated">
 			<div class="userid">
 				<label for="uid" class="form-label">User Name:</label>
-				<input type="text" class="form-control" id="uid" placeholder="Enter User Name" name="uid" required>
+				<input [(ngModel)]="username" type="text" class="form-control" id="uid" placeholder="Enter User Name" name="uid" required>
 				<div class="valid-feedback">Valid data.</div>
 				<div class="invalid-feedback">Please fill the user name.</div>
 			</div>
+			<p>{{username}}</p>
 			<div class="emailid">
 				<label for="emid" class="form-label">Email ID:</label>
 				<input type="email" class="form-control" id="emid" placeholder="Enter Email Id" name="emid" required>
@@ -69,8 +70,9 @@
 					</div>
 				</div>
 			</div>
-			<select [(ngModel)]="selectedValue">  
-				<option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+			<br>
+			<select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}">  
+				<option *ngFor="let item of items;" [selectedValue]="item.name">{{item.name}}</option>  
 			</select>  
 			<div class='row' [ngSwitch]="selectedValue">  
 				<div *ngSwitchCase="'One'">One is Selected !!!</div>
@@ -81,6 +83,9 @@
 			<br>
 			<button type="submit" class="btn btn-info mt-2">Submit</button>
 		</form>
+		<br>
+		<br>
+		
 	</div>
 </body>
 </html>

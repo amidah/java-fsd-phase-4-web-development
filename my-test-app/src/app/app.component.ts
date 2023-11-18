@@ -13,8 +13,10 @@ export class AppComponent {
   { movieTitle: 'Captain America: Civil War', director: 'Anthony Russo, Joe Russo', cast: 'Scarlett Johansson, Elizabeth Olsen, Chris Evans', releaseDate: 'May 6, 2016' },
   { movieTitle: 'X-Men: Apocalypse', director: 'Bryan Singer', cast: 'Jennifer Lawrence, Olivia Munn, Oscar Isaac', releaseDate: 'May 27, 2016' },
   ];
-  items: Item[] = [{name:'One', value:1},{name:'Two', value:2},{name:'Three', value:3}];
-  selectedValue:string='Fourth';
+  items: Item[] = [{name:'One', val:1},{name:'Two', val:2},{name:'Three', val:3}];
+  selectedValue:string='One';
+
+  username:string = "John Smith";
 
 }
 class Movie {
@@ -25,5 +27,5 @@ class Movie {
 }
 class Item {
   name: string;
-  value: number;
+  val: number;
 }
