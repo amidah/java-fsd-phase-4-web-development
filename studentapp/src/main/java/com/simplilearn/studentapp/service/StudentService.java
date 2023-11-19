@@ -9,7 +9,7 @@ public interface StudentService {
 
 	public boolean saveStudent(Student student);
 	public List<Student> getStudents();
-	public void deleteStudent(Student student);
-	public Student getStudentById(Student student);
+	public void deleteStudent(int student_id);
+	public Student getStudentById(int student_id);
 	public boolean updateStudent(Student student);
 }

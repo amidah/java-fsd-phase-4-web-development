@@ -34,14 +34,14 @@ public class StudentController {
 		return studentService.getStudents();
 	}
 	
-	@DeleteMapping("delete-student")
-	public void deleteStudent(@RequestBody Student student) {
-		studentService.deleteStudent(student);
+	@DeleteMapping("delete-student/{student_id}")
+	public void deleteStudent(@PathVariable("student_id") int student_id) {
+		studentService.deleteStudent(student_id);
 	}
 	
-	@GetMapping("get-student-by-id")
-	public Student getStudentById(@RequestBody Student student) {
-		return studentService.getStudentById(student);
+	@GetMapping("get-student-by-id/{student_id}")
+	public Student getStudentById(@PathVariable("student_id") int student_id) {
+		return studentService.getStudentById(student_id);
 	}
 	
 	@PutMapping("update-student")

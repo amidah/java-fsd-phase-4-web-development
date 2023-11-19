@@ -35,15 +35,15 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void deleteStudent(Student student) {
+	public void deleteStudent(int student_id) {
 
-		studentRepository.delete(student);
+		studentRepository.deleteById(student_id);
 	}
 
 	@Override
-	public Student getStudentById(Student student) {
+	public Student getStudentById(int student_id) {
 
-		return studentRepository.getById(student.getStudent_id());
+		return studentRepository.getById(student_id);
 	}
 
 	@Override
